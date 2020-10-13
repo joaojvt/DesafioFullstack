@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-crud',
@@ -9,7 +10,7 @@ export class UserCrudComponent implements OnInit {
 
   searchBarValue = ''
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }

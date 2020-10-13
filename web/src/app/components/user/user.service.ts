@@ -31,7 +31,11 @@ export class UserService {
   }
 
   setToken(token: string): void {
-    this.token = token
+    this.token = token;
+  }
+
+  getToken(): string{
+    return this.token;
   }
 
   getUserByToken(): Observable<User> {
@@ -68,5 +72,11 @@ export class UserService {
     const url = `${this.baseUrl}/user/${id}`
     const headers = { 'Authorization': `Bearer ${this.token}` }
     return this.http.delete<User>(url, { headers })
+  }
+
+  searchByName(name: string): Observable<User[]> {
+    const url = `${this.baseUrl}/users/:${name}`
+    const headers = { 'Authorization': `Bearer ${this.token}` }
+    return this.http.get<User[]>(url, { headers })
   }
 }

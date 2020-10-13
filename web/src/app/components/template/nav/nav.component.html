@@ -1,12 +1,17 @@
 <mat-sidenav-container class="container">
     <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
         <mat-nav-list class="nav-list">
-            <a mat-list-item routerLink="/home">
+            <a *ngIf="!userService.getToken()" mat-list-item routerLink="/">
+                <i class="material-icons v-middle">
+                    login
+                </i> Login
+            </a>
+            <a *ngIf="userService.getToken()" mat-list-item routerLink="/home">
                 <i class="material-icons v-middle">
                     home
                 </i> Início
             </a>
-            <a mat-list-item routerLink="/users">
+            <a *ngIf="userService.getToken()" mat-list-item routerLink="/users">
                 <i class="material-icons v-middle">
                     account_box
                 </i> Usuários

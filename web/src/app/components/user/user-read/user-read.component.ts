@@ -1,4 +1,3 @@
-import { getLocaleDateFormat } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
@@ -16,7 +15,7 @@ export class UserReadComponent implements OnInit {
   displayedColumns = ['name', 'email', 'createdAt', 'action'];
   dataSource: User[];
 
-  constructor(private userService: UserService, public dialog: MatDialog, private router: Router) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.loadData()

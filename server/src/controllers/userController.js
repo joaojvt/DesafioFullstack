@@ -112,7 +112,7 @@ exports.delete = async(req, res, next) => {
 
 exports.getAll = async(req, res, next) => {
     try {
-        const users = await User.find({}).select('+password')
+        const users = await User.find({})
         return res.status(201).send(users)
     } catch (error) {
         return res.status(404).send({ error: 'problem during search' })
@@ -122,7 +122,8 @@ exports.getAll = async(req, res, next) => {
 exports.searchByName = async(req, res, next) => {
     const name = req.params.filter
     try {
-        const users = await User.find({ name })
+        const users = await User.find({ name: { $regex: name, $options: 'i' } })
+
         return res.status(201).send(users)
     } catch (error) {
         return res.status(404).send({ error: 'problem during search' })

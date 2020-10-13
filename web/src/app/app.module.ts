@@ -33,6 +33,7 @@ import { LoginComponent } from './components/user/login/login.component';
 import { UserCrudComponent } from './views/user-crud/user-crud.component';
 import { UserUpdateComponent } from './components/user/user-update/user-update.component';
 import { UserDeleteComponent } from './components/user/user-delete/user-delete.component';
+import { UserSearchComponent } from './components/user/user-search/user-search.component';
 
 registerLocaleData(localePt);
 
@@ -71,6 +72,7 @@ const modules = [
     UserCrudComponent,
     UserUpdateComponent,
     UserDeleteComponent,
+    UserSearchComponent,
 
   ],
   entryComponents: [],

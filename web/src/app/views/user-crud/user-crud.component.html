@@ -6,8 +6,8 @@
     <mat-form-field class="searchBar">
         <mat-label>Pesquisa</mat-label>
         <input matInput type="text" [(ngModel)]="searchBarValue">
-        <button mat-button *ngIf="searchBarValue" matSuffix mat-icon-button aria-label="Clear" (click)="searchBarValue=''">
-          <i class="material-icons">close</i>
+        <button mat-button *ngIf="searchBarValue" matSuffix mat-icon-button aria-label="Clear" routerLink="search/:{{searchBarValue}}">
+          <i class="material-icons">search</i>
         </button>
     </mat-form-field>
 </div>
