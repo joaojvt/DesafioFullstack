@@ -1,0 +1,16 @@
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-bar button {
+    max-height: 36px;
+}
+
+.top-bar .searchBar {
+    width: 200px;
+}
+
+.top-bar .searchBar button i {
+    font-size: 18px;
+}
